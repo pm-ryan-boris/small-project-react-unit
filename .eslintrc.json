@@ -1,9 +1,12 @@
 {
   "parser": "babel-eslint",
-  "ecmaFeatures": {
-    "jsx": true
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": { "jsx": true, "modules": true }
   },
   "env": {
+    "es6": true,
     "browser": true,
     "node": true
   },
@@ -11,18 +14,18 @@
   "plugins": ["react", "jsx-a11y", "import", "prettier", "promise"],
   "rules": {
     "react/jsx-filename-extension": 0,
-    "no-undef": "warn"
-  },
-  "no-restricted-imports": [
-    "error",
-    {
-      "paths": [
-        {
-          "name": "styled-components",
-          "message": "Please import from styled-components/macro."
-        }
-      ],
-      "patterns": ["!styled-components/macro"]
-    }
-  ]
+    "no-undef": "warn",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "styled-components",
+            "message": "Please import from styled-components/macro."
+          }
+        ],
+        "patterns": ["!styled-components/macro"]
+      }
+    ]
+  }
 }
